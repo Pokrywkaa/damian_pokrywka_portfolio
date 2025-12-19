@@ -2,10 +2,9 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  // GitLab Pages configuration
-  // Update 'your-username' and 'portfolio' to match your GitLab repo
-  site: 'https://your-username.gitlab.io',
-  base: '/portfolio',
+  // GitHub Pages configuration
+  site: 'https://pokrywkaa.github.io',
+  base: '/damian_pokrywka_portfolio',
   
   // Static output for GitLab Pages
   output: 'static',
