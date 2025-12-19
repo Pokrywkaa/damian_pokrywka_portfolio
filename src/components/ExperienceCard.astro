@@ -1,0 +1,96 @@
+---
+import type { Experience } from '@data/experience';
+
+export interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+
+// Format date for display
+const formatDate = (dateStr: string) => {
+  if (dateStr === 'Present') return 'Present';
+  const [year, month] = dateStr.split('-');
+  const date = new Date(parseInt(year), parseInt(month) - 1);
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+};
+---
+
+<article class="experience-card card animate-fade-in">
+  <div class="experience-header">
+    <div>
+      <h3 class="experience-role">{experience.role}</h3>
+      <p class="experience-company">{experience.company}</p>
+    </div>
+    <span class="experience-dates">
+      {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
+    </span>
+  </div>
+  
+  <p class="experience-description">{experience.description}</p>
+  
+  {experience.technologies && experience.technologies.length > 0 && (
+    <div class="experience-technologies">
+      {experience.technologies.map(tech => (
+        <span class="tag">{tech}</span>
+      ))}
+    </div>
+  )}
+</article>
+
+<style>
+  .experience-card {
+    position: relative;
+  }
+  
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    gap: var(--spacing-md);
+  }
+  
+  .experience-role {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+  
+  .experience-company {
+    color: var(--accent-primary);
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .experience-dates {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  
+  .experience-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .experience-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--spacing-md);
+  }
+  
+  @media (max-width: 768px) {
+    .experience-header {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+    
+    .experience-dates {
+      font-size: 0.8rem;
+    }
+  }
+</style>

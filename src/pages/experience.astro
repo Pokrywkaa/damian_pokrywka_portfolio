@@ -1,0 +1,72 @@
+---
+import Layout from '@layouts/Layout.astro';
+import ExperienceCard from '@components/ExperienceCard.astro';
+import { experiences } from '@data/experience';
+---
+
+<Layout title="Experience - Portfolio" description="Professional experience and work history">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title animate-fade-in">Professional Experience</h1>
+      
+      <div class="timeline">
+        {experiences.map((experience, index) => (
+          <div class="timeline-item" style={`animation-delay: ${index * 0.1}s`}>
+            <div class="timeline-marker"></div>
+            <ExperienceCard experience={experience} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: -2.5rem;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 0 4px var(--bg-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 1.5rem;
+    }
+    
+    .timeline-marker {
+      left: -2rem;
+      width: 10px;
+      height: 10px;
+    }
+  }
+</style>

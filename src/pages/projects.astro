@@ -1,0 +1,61 @@
+---
+import Layout from '@layouts/Layout.astro';
+import ProjectCard from '@components/ProjectCard.astro';
+import { projects } from '@data/projects';
+
+// Separate featured and regular projects
+const featuredProjects = projects.filter(p => p.featured);
+const regularProjects = projects.filter(p => !p.featured);
+---
+
+<Layout title="Projects - Portfolio" description="Portfolio of projects and work">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title animate-fade-in">Projects</h1>
+      
+      {featuredProjects.length > 0 && (
+        <div class="featured-projects">
+          <h2 class="subsection-title">Featured Projects</h2>
+          <div class="grid grid-2">
+            {featuredProjects.map((project, index) => (
+              <div style={`animation-delay: ${index * 0.1}s`}>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      {regularProjects.length > 0 && (
+        <div class="other-projects">
+          <h2 class="subsection-title">Other Projects</h2>
+          <div class="grid grid-3">
+            {regularProjects.map((project, index) => (
+              <div style={`animation-delay: ${(featuredProjects.length + index) * 0.1}s`}>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .featured-projects,
+  .other-projects {
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .subsection-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-primary);
+  }
+  
+  .grid > div {
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+  }
+</style>

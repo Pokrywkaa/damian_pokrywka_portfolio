@@ -1,0 +1,157 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { personalInfo, technologies } from '@data/personal';
+---
+
+<Layout title="About - Portfolio" description={personalInfo.aboutLong}>
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title animate-fade-in">About Me</h1>
+      
+      <div class="about-content">
+        <div class="about-text animate-slide-in-left">
+          <p class="about-intro">{personalInfo.aboutLong}</p>
+          
+          <div class="about-info">
+            <div class="info-item">
+              <span class="info-label">Location:</span>
+              <span class="info-value">{personalInfo.location}</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Email:</span>
+              <a href={`mailto:${personalInfo.email}`} class="info-value">{personalInfo.email}</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="technologies-section animate-slide-in-right">
+          <h2>Technologies & Tools</h2>
+          <div class="technologies-grid">
+            {technologies.map((category) => (
+              <div class="tech-category">
+                <h3 class="tech-category-title">{category.category}</h3>
+                <div class="tech-items">
+                  {category.items.map((item) => (
+                    <span class="tag">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-section animate-fade-in">
+        <h2>Let's Work Together</h2>
+        <p>I'm always interested in hearing about new projects and opportunities.</p>
+        <a href={`${import.meta.env.BASE_URL}/contact`} class="btn">Contact Me</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-content {
+    display: grid;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .about-text {
+    max-width: 800px;
+  }
+  
+  .about-intro {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .about-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+  }
+  
+  .info-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+  
+  .info-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 80px;
+  }
+  
+  .info-value {
+    color: var(--text-secondary);
+  }
+  
+  .technologies-section h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .technologies-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+  
+  .tech-category {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+  }
+  
+  .tech-category-title {
+    color: var(--accent-primary);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .tech-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .cta-section {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+  }
+  
+  .cta-section h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .cta-section p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.125rem;
+  }
+  
+  @media (max-width: 768px) {
+    .about-intro {
+      font-size: 1rem;
+    }
+    
+    .info-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .cta-section {
+      padding: var(--spacing-xl);
+    }
+  }
+</style>
