@@ -15,14 +15,14 @@ export interface TechnologyCategory {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: "Your Name",
-  role: "Full Stack Developer",
-  bio: "Passionate software engineer specializing in building exceptional digital experiences. I focus on creating efficient, scalable, and user-friendly applications.",
-  aboutLong: "I'm a Full Stack Developer with 5+ years of experience building web applications. I have a strong foundation in both frontend and backend development, with expertise in modern JavaScript frameworks, cloud technologies, and DevOps practices. I'm passionate about writing clean, maintainable code and continuously learning new technologies. When I'm not coding, you can find me contributing to open-source projects, writing technical blog posts, or exploring new web technologies.",
-  email: "your.email@example.com",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
-  location: "City, Country"
+  name: "Damian Pokrywka",
+  role: "Software Engineer",
+  bio: "Software Engineer with over 3 years of professional experience, specializing in Python and cloud-native solutions on AWS. Currently working at Capgemini, I focus on building scalable, reliable systems for enterprise clients while continuously exploring innovative technologies.",
+  aboutLong: "I'm Damian, a Software Engineer at Capgemini with over three years of professional experience. I hold a Bachelor's degree in Automation and Robotics, where I gained my first exposure to computer science and discovered my passion for software engineering. To further strengthen my expertise, I pursued a Master's degree in Applied Computer Science, taught entirely in English, alongside a full-time job.\n\nDuring my studies, I balanced daily academic work with professional responsibilities, gaining strong theoretical foundations and hands-on industry experience. This journey culminated in my master's thesis, \"Comparison of Snowflake and Databricks Platforms in the Context of Data Processing and Business Analytics,\" developed in collaboration with Capgemini.\n\nI specialize in Python and Cloud Computing, particularly AWS, which I work with on a daily basis. My responsibilities include designing and implementing cloud infrastructure, developing business logic, and delivering scalable, production-grade solutions for enterprise clients. I work in Agile environments using the Scrum framework and enjoy tackling complex technical challenges.\n\nIn addition to cloud engineering, I actively participate in innovative projects involving intelligent agents, Model Context Protocol (MCP), and large language model (LLM) processing. I’m particularly interested in how AI-driven systems can enhance data processing, automation, and decision-making at scale.",
+  email: "damian.pokrywka3@gmail.com",
+  github: "https://github.com/Pokrywkaa",
+  linkedin: "https://www.linkedin.com/in/damian-pokrywka-7602a6231/",
+  location: "Poland"
 };
 
 export const technologies: TechnologyCategory[] = [
