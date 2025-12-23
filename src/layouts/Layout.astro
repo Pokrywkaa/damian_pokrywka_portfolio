@@ -125,9 +125,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     // Highlight active nav link
     const currentPath = window.location.pathname;
     navLinks?.querySelectorAll('a').forEach(link => {
-      if (link.getAttribute('href') === currentPath || 
-          (currentPath === '/' && link.getAttribute('href') === '/') ||
-          (currentPath !== '/' && currentPath.startsWith(link.getAttribute('href')))) {
+      const href = link.getAttribute('href');
+      if (href === currentPath) {
         link.classList.add('active');
       }
     });
