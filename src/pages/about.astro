@@ -10,7 +10,11 @@ import { personalInfo, technologies } from '@data/personal';
       
       <div class="about-content">
         <div class="about-text animate-slide-in-left">
-          <p class="about-intro">{personalInfo.aboutLong}</p>
+          <div class="about-paragraphs">
+            {personalInfo.aboutLong.split('\n\n').map((paragraph) => (
+              <p class="about-paragraph">{paragraph}</p>
+            ))}
+          </div>
           
           <div class="about-info">
             <div class="info-item">
@@ -58,7 +62,35 @@ import { personalInfo, technologies } from '@data/personal';
   }
   
   .about-text {
-    max-width: 800px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .about-paragraphs {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+  }
+  
+  .about-paragraph {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+  
+  .about-paragraph:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-hover);
+  }
+  
+  .about-paragraph:last-child {
+    margin-bottom: 0;
   }
   
   .about-intro {

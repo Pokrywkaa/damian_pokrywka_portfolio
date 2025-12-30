@@ -89,6 +89,9 @@ import { personalInfo } from '@data/personal';
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
     transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .contact-card:hover {
@@ -107,6 +110,7 @@ import { personalInfo } from '@data/personal';
   .contact-card h3 {
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
+    width: 100%;
   }
   
   .contact-link {
