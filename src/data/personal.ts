@@ -22,24 +22,24 @@ export const personalInfo: PersonalInfo = {
   email: "damian.pokrywka3@gmail.com",
   github: "https://github.com/Pokrywkaa",
   linkedin: "https://www.linkedin.com/in/damian-pokrywka-7602a6231/",
-  location: "Poland"
+  location: "Poland, Wrocław"
 };
 
 export const technologies: TechnologyCategory[] = [
   {
-    category: "Frontend",
-    items: ["React", "Vue.js", "TypeScript", "Astro", "Next.js", "HTML5", "CSS3", "Tailwind CSS"]
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB", "Redis", "REST APIs", "GraphQL"]
+    category: "Backend & Data",
+    items: ["Python", "Pandas", "Pytest", "PySpark", "PostgreSQL", "DynamoDB"]
   },
   {
     category: "Cloud & DevOps",
-    items: ["AWS", "Docker", "Kubernetes", "GitLab CI/CD", "GitHub Actions", "Terraform", "Linux"]
+    items: ["AWS", "GCP", "Terraform", "GitLab CI/CD", "GitHub Actions", "Linux", "Snowflake", "Docker"]
   },
   {
-    category: "Tools",
-    items: ["Git", "VS Code", "Figma", "Postman", "Jest", "Webpack", "Vite"]
+    category: "Tools & Monitoring",
+    items: ["Git", "Jira", "CloudWatch", "OpenSearch", "Grafana", "VS Code"]
+  },
+  {
+    category: "Languages",
+    items: ["English (C1)", "German (A2)", "Polish (Native)"]
   }
 ];

@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
     technologies: [
       "Python",
       "Terraform",
-      "AWS (API Gateway, Step Functions, Lambda, SageMaker)",
+      "AWS (API Gateway, Step Functions, Lambda, Bedrock, S3)",
       "Snowflake",
       "Git"
     ]
@@ -86,7 +86,7 @@ export const experiences: Experience[] = [
       "PySpark",
       "Terraform",
       "AWS CDK",
-      "AWS (Lambda, DynamoDB, AppSync, Glue, S3, Athena)",
+      "AWS (Lambda, DynamoDB, AppSync, Glue, S3, Athena, RDS, SageMaker)",
       "Grafana",
       "Git"
     ]
