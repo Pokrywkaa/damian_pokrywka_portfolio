@@ -10,28 +10,24 @@ export interface Education {
 
 export const education: Education[] = [
   {
-    degree: "Master of Science in Computer Science",
-    institution: "University of Technology",
-    location: "City, Country",
-    startYear: 2016,
-    endYear: 2018,
-    description: "Specialized in Software Engineering and Distributed Systems",
+    degree: "Master of Science in Applied Computer Science",
+    institution: "Wrocław University of Science and Technology",
+    location: "Wrocław, Poland",
+    startYear: 2022,
+    endYear: 2024,
     achievements: [
-      "GPA: 3.8/4.0",
-      "Thesis: Scalable Microservices Architecture",
-      "Teaching Assistant for Web Development course"
+      "Master Thesis in cooperation with Capgemini: Comparison of Snowflake and Databricks platforms in the context of data processing and business analytics"
     ]
   },
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "State University",
-    location: "City, Country",
-    startYear: 2012,
-    endYear: 2016,
-    description: "Foundation in Computer Science fundamentals",
+    degree: "Bachelor of Science in Automatic Control and Robotics",
+    institution: "Wrocław University of Science and Technology",
+    location: "Wrocław, Poland",
+    startYear: 2018,
+    endYear: 2022,
     achievements: [
-      "Graduated with Honors",
-      "President of Computer Science Club"
+      "Thesis: Synchronous Control System for Wind Turbines",
+      "Rector’s Award for top students"
     ]
   }
 ];

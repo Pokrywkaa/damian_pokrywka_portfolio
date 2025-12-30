@@ -6,7 +6,7 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = "Full Stack Developer specializing in modern web technologies" } = Astro.props;
+const { title, description = "Software Engineer specializing in cloud technologies" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -42,7 +42,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <nav class="navbar">
     <div class="container">
       <div class="nav-content">
-        <a href={`${import.meta.env.BASE_URL}`} class="nav-logo">Portfolio</a>
+        <a href={`${import.meta.env.BASE_URL}`} class="nav-logo">Damian Pokrywka</a>
         
         <div class="nav-links" id="navLinks">
           <a href={`${import.meta.env.BASE_URL}`}>Home</a>
@@ -80,16 +80,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Damian Pokrywka. All rights reserved.</p>
         <div class="footer-links">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Pokrywkaa" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/damian-pokrywka-7602a6231/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="mailto:your.email@example.com">Email</a>
         </div>
       </div>
     </div>
   </footer>
-
   <script is:inline>
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
@@ -125,9 +124,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     // Highlight active nav link
     const currentPath = window.location.pathname;
     navLinks?.querySelectorAll('a').forEach(link => {
-      if (link.getAttribute('href') === currentPath || 
-          (currentPath === '/' && link.getAttribute('href') === '/') ||
-          (currentPath !== '/' && currentPath.startsWith(link.getAttribute('href')))) {
+      const href = link.getAttribute('href');
+      if (href === currentPath) {
         link.classList.add('active');
       }
     });
