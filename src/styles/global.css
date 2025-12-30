@@ -56,6 +56,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px; /* Set explicit base font size for consistency */
 }
 
 body {
@@ -63,6 +64,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
+  font-size: 1rem; /* Explicit body font size */
   transition: background-color var(--transition-base), color var(--transition-base);
 }
 

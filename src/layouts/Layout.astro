@@ -90,6 +90,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </div>
   </footer>
   <script is:inline>
+    // Set active navigation link
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentPath = window.location.pathname;
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      navLinks.forEach(link => {
+        const linkPath = new URL(link.href).pathname;
+        
+        // Normalize both paths by removing trailing slashes
+        const normalizePath = (path) => {
+          // Remove trailing slash, but keep single '/' for root
+          return path.length > 1 ? path.replace(/\/$/, '') : path;
+        };
+        
+        const normalizedCurrent = normalizePath(currentPath);
+        const normalizedLink = normalizePath(linkPath);
+        
+        // Check if paths match
+        if (normalizedCurrent === normalizedLink) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
@@ -119,15 +143,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         navLinks.classList.remove('active');
         mobileMenuToggle?.classList.remove('active');
       });
-    });
-    
-    // Highlight active nav link
-    const currentPath = window.location.pathname;
-    navLinks?.querySelectorAll('a').forEach(link => {
-      const href = link.getAttribute('href');
-      if (href === currentPath) {
-        link.classList.add('active');
-      }
     });
   </script>
 
